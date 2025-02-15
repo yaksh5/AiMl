@@ -15,7 +15,7 @@ def unbind_vectors(v1, v2):
     """Unbind vectors to retrieve the original components."""
     return v1 * v2  # Unbinding is the same as binding for binary hypervectors
 
-# Example usage
+
 word1 = generate_hypervector()
 word2 = generate_hypervector()
 
@@ -36,7 +36,7 @@ def generate_synthetic_sentence(prompt, max_length=30):
     output = generator(prompt, max_length=max_length, num_return_sequences=1)
     return output[0]['generated_text']
 
-# Example usage
+
 prompt = "Once upon a time in a small village"
 synthetic_sentence = generate_synthetic_sentence(prompt)
 
@@ -52,7 +52,7 @@ def augment_text(text):
     """Generate an augmented version of the input text."""
     return augmenter.augment(text)
 
-# Example usage
+
 original_text = "The sun rises in the east."
 augmented_text = augment_text(original_text)
 
@@ -70,7 +70,7 @@ def text_to_speech(text, lang="hi"):
     engine.say(text)
     engine.runAndWait()
 
-# Example usage
+
 text = "नमस्ते, यह एक परीक्षण वाक्य है।"
 text_to_speech(text)  # Speaks out the text in Hindi
 
@@ -91,7 +91,7 @@ def decrypt_message(encrypted_message, key):
     cipher = AES.new(key, AES.MODE_EAX, nonce=nonce)
     return cipher.decrypt_and_verify(ciphertext, tag).decode()
 
-# Example usage
+
 key = b'Sixteen byte key'  # Must be 16 bytes
 original_text = "This is a secret synthetic data sample."
 encrypted_text = encrypt_message(original_text, key)
@@ -109,7 +109,7 @@ def quantum_search(data, target):
     probabilities = weights / weights.sum()
     return np.random.choice(data, p=probabilities)
 
-# Example usage
+
 text_data = ["hello", "world", "quantum", "computing", "future"]
 search_result = quantum_search(text_data, "quantum")
 
